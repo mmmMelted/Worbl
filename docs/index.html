@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#25283d">
+<meta name="description" content="Play Worbl in your browser. Drop marbles, collect powerful letters, and build words. An early playtest for feedback.">
+<title>Worbl · Safari playtest</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#25283d;color:#f5e8cf}
+*{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none}
+#frame{position:fixed;top:env(safe-area-inset-top,0px);right:env(safe-area-inset-right,0px);bottom:env(safe-area-inset-bottom,0px);left:env(safe-area-inset-left,0px);overflow:hidden}
+canvas{display:block;width:100%;height:100%;outline:none;touch-action:none;-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}
+#loading{position:absolute;inset:0;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at 50% 25%,#3b4163,#25283d 70%);z-index:2;overflow:auto}
+.card{width:min(100%,430px);text-align:center;padding:32px 24px;background:#2c3045;border:2px solid #525b77;border-radius:28px;box-shadow:0 16px 0 #1c2032}
+.mark{font-size:70px;font-weight:900;letter-spacing:-5px;color:#83dfca;line-height:1.1;margin:0 0 12px;text-shadow:0 5px #1c2032}
+h1{font-size:21px;margin:8px 0 18px}p{line-height:1.5;color:#c6c6d5;font-size:16px}.badge{display:inline-block;padding:6px 12px;background:#41415a;border-radius:20px;color:#f6ce70;font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase}
+button{font:inherit;font-size:20px;font-weight:800;border:2px solid #ffd195;background:#db7949;color:#211d2c;border-radius:16px;min-height:58px;width:100%;cursor:pointer;box-shadow:0 5px #8b4937;margin:8px 0 10px}button:disabled{opacity:.6;cursor:wait}button:focus-visible,a:focus-visible{outline:3px solid #83dfca;outline-offset:4px}a{color:#9ce9db}progress{width:100%;height:10px;accent-color:#83dfca;margin:10px 0}.small{font-size:13px}.hidden{display:none!important}
+</style>
+<link id="-gd-engine-icon" rel="icon" type="image/png" href="index.icon.png" />
+<link rel="apple-touch-icon" href="index.apple-touch-icon.png"/>
+
+</head>
+<body>
+<div id="frame"><canvas id="canvas" tabindex="0" aria-label="Worbl game"></canvas>
+<section id="loading" aria-label="Start Worbl"><div class="card">
+<div class="badge">Early playtest · 0.2.3-web.1</div>
+<div class="mark" aria-hidden="true">Worbl</div><h1>A good bounce.<br>A better word.</h1>
+<p>Drop marbles. Collect letters.<br>Build your best word.</p>
+<button id="play" type="button">Play Worbl</button>
+<progress id="progress" class="hidden" aria-label="Loading game"></progress>
+<p id="status" aria-live="polite">Best played upright on your iPhone.</p>
+<p class="small">The first load downloads the game. Progress saves in this browser; private browsing or clearing website data may remove it.</p>
+<a class="small" href="https://github.com/mmmMelted/Worbl/issues/new/choose" target="_blank" rel="noopener">Share feedback</a>
+</div></section></div>
+<noscript>Enable JavaScript to play Worbl.</noscript>
+<script src="index.js"></script>
+<script>
+'use strict';
+const config={"args":[],"canvasResizePolicy":0,"emscriptenPoolSize":8,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":7326272,"index.wasm":39514754},"focusCanvas":true,"gdextensionLibs":[],"godotPoolSize":4};
+config.canvasResizePolicy=0;
+const canvas=document.getElementById('canvas');
+const frame=document.getElementById('frame');
+const overlay=document.getElementById('loading');
+const play=document.getElementById('play');
+const status=document.getElementById('status');
+const progress=document.getElementById('progress');
+let running=false;
+function fitCanvas(){
+ const rect=frame.getBoundingClientRect();
+ const pixelRatio=Math.min(window.devicePixelRatio||1,1.5);
+ const width=Math.max(1,Math.round(rect.width*pixelRatio));
+ const height=Math.max(1,Math.round(rect.height*pixelRatio));
+ if(canvas.width!==width)canvas.width=width;
+ if(canvas.height!==height)canvas.height=height;
+}
+new ResizeObserver(fitCanvas).observe(frame);
+window.addEventListener('resize',fitCanvas);
+if(window.visualViewport)window.visualViewport.addEventListener('resize',fitCanvas);
+fitCanvas();
+const engine=new Engine(config);
+function fail(error){
+ console.error(error);
+ overlay.classList.remove('hidden');progress.classList.add('hidden');
+ status.textContent='The game could not start. Try reloading this page in an up-to-date Safari tab. If it keeps happening, tell us your iPhone model and iOS version. '+(error?.message||'');
+ play.textContent='Reload and try again';play.disabled=false;
+ play.onclick=()=>location.reload();
+}
+play.onclick=async()=>{
+ play.disabled=true;play.textContent='Loading…';progress.classList.remove('hidden');
+ status.textContent='Loading Worbl. This can take a moment on the first visit.';
+ try{
+  const missing=Engine.getMissingFeatures({threads:false});
+  if(missing.length)throw new Error('Browser support needed: '+missing.join(', '));
+  fitCanvas();
+  await engine.startGame({canvas,onProgress:(current,total)=>{
+   if(total>0){progress.max=total;progress.value=current;status.textContent='Loading Worbl · '+Math.round(current/total*100)+'%';}
+  }});
+  running=true;overlay.classList.add('hidden');canvas.focus();
+ }catch(error){fail(error);}
+};
+window.addEventListener('error',event=>{if(!running)fail(event.error||new Error(event.message));});
+</script>
+</body></html>
+

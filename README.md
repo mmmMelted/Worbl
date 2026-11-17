@@ -4,7 +4,13 @@
 
 A colorful Plinko-inspired word game: aim your marbles, collect letters with different power levels, and build words to clear each board.
 
-## Play the development preview
+## Play in Safari on your iPhone
+
+**[Play Worbl in your browser](https://mmmmelted.github.io/Worbl/)** — no installation or TestFlight required. Tap **Play Worbl**, keep your phone upright, and send feedback about the controls, readability, difficulty, and sound.
+
+This browser preview enables the full game for testing. It saves progress in the current browser; private browsing or clearing website data may erase that progress. The browser version does not test native purchases or all device features. Physical iPhone/Safari testing is still needed.
+
+## Download the development preview
 
 **[Download v0.2.3](https://github.com/mmmMelted/Worbl/releases/tag/v0.2.3)**
 
@@ -12,7 +18,7 @@ A colorful Plinko-inspired word game: aim your marbles, collect letters with dif
 | --- | --- | --- |
 | Windows 64-bit | [Windows ZIP](https://github.com/mmmMelted/Worbl/releases/download/v0.2.3/Worbl-v0.2.3-Windows.zip) | Extract the ZIP. Open `Worbl.exe`, keeping `Worbl.pck` beside it. |
 | Android | [Android APK](https://github.com/mmmMelted/Worbl/releases/download/v0.2.3/Worbl-v0.2.3-Android.apk) | Development APK for testing on Android 8 or newer; arm64 and x86_64. |
-| iPhone | Not available yet | A signed iOS build and TestFlight invitation are planned. |
+| iPhone Safari | [Browser playtest](https://mmmmelted.github.io/Worbl/) | Open in Safari and tap Play Worbl. A native iOS app is not available yet. |
 
 This is an unfinished **development preview**, not the commercial release. Full content is enabled for testing. Android is debug-signed, and the latest version has not been validated on physical phones. There is no App Store or Google Play release yet.
 
@@ -40,7 +46,7 @@ These are phone-sized Windows captures of the game, paused during feedback anima
 
 ## Repository contents
 
-This repository contains public information, screenshots, and downloadable builds. The game's source code is maintained separately in a private repository. GitHub's automatic **Source code** archives contain only this public repository, not the game source.
+This repository contains public information, screenshots, downloadable builds, and a compiled browser playtest under docs/. The game's source code is maintained separately in a private repository. GitHub's automatic **Source code** archives contain this public repository, including the compiled browser build, not the private development source.
 
 The working title is Worbl. The planned mobile release is free to try with a one-time full-game unlock. Store purchases, device testing, balancing, and iOS distribution are still in development.
 
