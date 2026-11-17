@@ -6,7 +6,9 @@ A colorful Plinko-inspired word game: aim your marbles, collect letters with dif
 
 ## Play in Safari on your iPhone
 
-**[Play Worbl in your browser](https://mmmmelted.github.io/Worbl/)** — no installation or TestFlight required. Tap **Play Worbl**, keep your phone upright, and send feedback about the controls, readability, difficulty, and sound.
+**[Play Worbl in your browser](https://mmmmelted.github.io/Worbl/)** — no installation or TestFlight required. Tap **Open Worbl**, keep your phone upright, and send feedback about the controls, readability, difficulty, and sound.
+
+The Safari preview is **0.2.3-web.2**, with a redesigned home menu. The Windows/Android downloads below remain v0.2.3.
 
 This browser preview enables the full game for testing. It saves progress in the current browser; private browsing or clearing website data may erase that progress. The browser version does not test native purchases or all device features. Physical iPhone/Safari testing is still needed.
 
@@ -18,7 +20,7 @@ This browser preview enables the full game for testing. It saves progress in the
 | --- | --- | --- |
 | Windows 64-bit | [Windows ZIP](https://github.com/mmmMelted/Worbl/releases/download/v0.2.3/Worbl-v0.2.3-Windows.zip) | Extract the ZIP. Open `Worbl.exe`, keeping `Worbl.pck` beside it. |
 | Android | [Android APK](https://github.com/mmmMelted/Worbl/releases/download/v0.2.3/Worbl-v0.2.3-Android.apk) | Development APK for testing on Android 8 or newer; arm64 and x86_64. |
-| iPhone Safari | [Browser playtest](https://mmmmelted.github.io/Worbl/) | Open in Safari and tap Play Worbl. A native iOS app is not available yet. |
+| iPhone Safari | [Browser playtest](https://mmmmelted.github.io/Worbl/) | Open in Safari and tap Open Worbl. A native iOS app is not available yet. |
 
 This is an unfinished **development preview**, not the commercial release. Full content is enabled for testing. Android is debug-signed, and the latest version has not been validated on physical phones. There is no App Store or Google Play release yet.
 
@@ -52,4 +54,4 @@ The working title is Worbl. The planned mobile release is free to try with a one
 
 ## Credits
 
-Made with Godot. Godot, font, and dictionary license notices are included with the Windows download; bundled third-party components retain their own licenses. This public page does not grant an open-source license to the game or its artwork.
+Made with Godot. Godot, font, and dictionary license notices are included with the Windows download and in [the browser build](docs/licenses/); bundled third-party components retain their own licenses. This public page does not grant an open-source license to the game or its artwork.
