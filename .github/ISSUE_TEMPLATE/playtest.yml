@@ -1,0 +1,30 @@
+name: Playtest feedback
+description: Report a problem or tell us about your playthrough.
+title: "[Feedback] "
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Game version
+      placeholder: v0.2.3
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device and operating system
+      placeholder: Windows 11 laptop / Android phone model and OS version
+    validations:
+      required: true
+  - type: textarea
+    id: feedback
+    attributes:
+      label: What happened?
+      description: Tell us the level/mode, steps, and expected result. Do not include private information.
+    validations:
+      required: true
+  - type: textarea
+    id: feel
+    attributes:
+      label: How did it feel?
+      description: Optional feedback on difficulty, controls, readability, sound, and fun.
