@@ -8,7 +8,7 @@ A colorful Plinko-inspired word game: aim your marbles, collect letters with dif
 
 **[Play Worbl in your browser](https://mmmmelted.github.io/Worbl/)** — no installation or TestFlight required. Tap **Open Worbl**, keep your phone upright, and send feedback about the controls, readability, difficulty, and sound.
 
-The Safari preview is **0.2.3-web.5**, with six illustrated upgrade icons, larger artwork in upgrade cards, and clearer material detail. It retains the full-width letter table and Previous/Next pages for large stashes. Audio is unchanged in this build while softer pickup sounds are being auditioned. The Windows/Android downloads below remain v0.2.3.
+The Safari preview is **0.2.3-web.6**, with the approved softer two-note letter sounds, variations in the backing music's scale, and unchanged peg clacks. It retains the illustrated upgrade icons and expanded letter table. The Windows/Android downloads below remain v0.2.3.
 
 This browser preview enables the full game for testing. It saves progress in the current browser; private browsing or clearing website data may erase that progress. The browser version does not test native purchases or all device features. Physical iPhone/Safari testing is still needed.
 
