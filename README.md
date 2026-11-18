@@ -8,7 +8,7 @@ A colorful Plinko-inspired word game: aim your marbles, collect letters with dif
 
 **[Play Worbl in your browser](https://mmmmelted.github.io/Worbl/)** — no installation or TestFlight required. Tap **Open Worbl**, keep your phone upright, and send feedback about the controls, readability, difficulty, and sound.
 
-The Safari preview is **0.2.3-web.7**, with an illustrated dropper, a first-bounce aiming guide, larger board letters, a compact phone header, guarded touch aiming and reduced idle/rendering work. It keeps the approved soft letter sounds and expanded letter table. These changes still need physical iPhone feedback, including temperature and touch behavior. The Windows/Android downloads below remain v0.2.3.
+The Safari preview is **0.2.3-web.8**, with sharper Retina rendering by default, a taller phone board and a thumb aiming strip: slide below the board, then release to drop. The full letter table appears when you build a word. Settings includes a Sharper display toggle for choosing lower graphics load. The approved soft letter sounds are unchanged. Physical iPhone comfort, clarity and temperature still need feedback. Windows/Android downloads remain v0.2.3.
 
 This browser preview enables the full game for testing. It saves progress in the current browser; private browsing or clearing website data may erase that progress. The browser version does not test native purchases or all device features. Physical iPhone/Safari testing is still needed.
 
@@ -34,7 +34,7 @@ This is an unfinished **development preview**, not the commercial release. Full 
 
 The campaign starts with 10 balls. Each ball normally collects its first letter target plus a letter from its landing slot; the Spring upgrade allows an extra target pickup. Small pegs affect the bounce without awarding a letter. Word score combines letter power and length. Reach the board's goal within three words.
 
-Aim by dragging on the board, then tap **Drop** or **Drop 5**. Collect letters, choose **Build a word**, and tap your stash in word order. On desktop, arrows aim, Space drops, letter keys select tiles, and Enter submits.
+On a phone, slide along the aiming strip below the board and release to drop one ball; slide outside to cancel. Use **Drop 5** for a volley. Collect letters, choose **Build a word**, and tap your stash in word order. On desktop, arrows aim, Space drops, letter keys select tiles, and Enter submits.
 
 ## Actual game screenshots
 
